@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adhorrig/google-flights-wrapper.git"
+    "url": "git+https://github.com/nab0310/google-flights-wrapper.git"
   },
   "keywords": [
     "api",
@@ -18,12 +18,12 @@
     "airline",
     "flight"
   ],
-  "author": "Adam Horrigan",
+  "author": "Nick Behrens",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/adhorrig/google-flights-wrapper/issues"
+    "url": "https://github.com/nab0310/google-flights-wrapper/issues"
   },
-  "homepage": "https://github.com/adhorrig/google-flights-wrapper#readme",
+  "homepage": "https://github.com/nab0310/google-flights-wrapper#readme",
   "dependencies": {
     "request": "^2.75.0"
   }

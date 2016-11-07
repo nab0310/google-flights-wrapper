@@ -21,7 +21,12 @@ module.exports = function(apikey){
 
         if(body.error) return console.error(body.error);
         for(i=0; i < body.trips.tripOption.length; i++){
-          airline = body.trips.tripOption[i].slice[0].segment[0].flight.carrier
+          for(j=0;j<body.trips.data.carrier.length;j++){
+            if(body.trips.data.carrier[j].code==body.trips.tripOption[i].slice[0].segment[0].flight.carrier){
+                airline = body.trips.data.carrier[j].name;
+                break;
+            }
+          }
           price = body.trips.tripOption[i].saleTotal
           jsonObject = {"airline": airline , "price": price};
           info.push(jsonObject);

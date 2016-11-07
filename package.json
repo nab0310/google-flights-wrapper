@@ -1,6 +1,6 @@
 {
   "name": "google-flights-wrapper1",
-  "version": "1.0.5",
+  "version": "1.1.5",
   "description": "A simple wrapper for the Google Flights API",
   "main": "index.js",
   "scripts": {

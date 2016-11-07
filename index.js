@@ -18,17 +18,22 @@ module.exports = function(apikey){
         var jsonObject = {};
         var airline;
         var price;
+        var arrivalTime;
+        var departureTime;
 
         if(body.error) return console.error(body.error);
         for(i=0; i < body.trips.tripOption.length; i++){
           for(j=0;j<body.trips.data.carrier.length;j++){
             if(body.trips.data.carrier[j].code==body.trips.tripOption[i].slice[0].segment[0].flight.carrier){
                 airline = body.trips.data.carrier[j].name;
+                name = body.trips.data.carrier[j].name;
                 break;
             }
           }
           price = body.trips.tripOption[i].saleTotal
-          jsonObject = {"airline": airline , "price": price};
+          arrivalTime = body.trips.tripOption[i].slice[0].segment[0].leg[body.trips.tripOption[i].slice[0].segment[0].leg.length-1].arrivalTime;
+          departureTime = body.trips.tripOption[i].slice[0].segment[0].leg[0].departureTime;
+          jsonObject = {"airline": airline , "price": price, "name:": name, "departureTime:":departureTime, "arrivalTime:":arrivalTime};
           info.push(jsonObject);
         }
         fn(info);

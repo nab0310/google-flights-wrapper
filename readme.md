@@ -1,18 +1,18 @@
-#Google Flights Wrapper
+#Google Flights Wrapper1
 
 ## Installation
 
 ```
-npm install google-flights-wrapper
+npm install google-flights-wrapper1
 ```
 
 ## Usage
 
 ```javascript
-var qpx = require('google-flights-wrapper')(API_KEY_HERE);
+var qpx = require('google-flights-wrapper1')(API_KEY_HERE);
 
 qpx.api("1", "EUR5000", "1", "DUB", "GDN", "2016-12-14", function(data){
-  //data looks like: [ { airline: 'SK', price: 'EUR71.10' } ]
+  //data looks like: [ { airline: 'SK', price: 'EUR71.10', name: 'Name of airline' } ]
 });
 ```
 

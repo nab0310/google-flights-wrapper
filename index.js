@@ -20,6 +20,7 @@ module.exports = function(apikey){
         var price;
         var arrivalTime;
         var departureTime;
+        var flightNumber;
 
         if(body.error) return console.error(body.error);
         for(i=0; i < body.trips.tripOption.length; i++){
@@ -30,10 +31,11 @@ module.exports = function(apikey){
                 break;
             }
           }
-          price = body.trips.tripOption[i].saleTotal
+          flightNumber = body.trips.tripOption[i].slice[0].segment[0].flight.number;
+          price = body.trips.tripOption[i].saleTotal;
           arrivalTime = body.trips.tripOption[i].slice[0].segment[0].leg[body.trips.tripOption[i].slice[0].segment[0].leg.length-1].arrivalTime;
           departureTime = body.trips.tripOption[i].slice[0].segment[0].leg[0].departureTime;
-          jsonObject = {"airline": airline , "price": price, "name:": name, "departureTime:":departureTime, "arrivalTime:":arrivalTime};
+          jsonObject = {"airline": airline , "price": price, "name:": name, "departureTime:":departureTime, "arrivalTime:":arrivalTime, "flightNumber:":flightNumber};
           info.push(jsonObject);
         }
         fn(info);

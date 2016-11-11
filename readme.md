@@ -12,7 +12,8 @@ npm install google-flights-wrapper1
 var qpx = require('google-flights-wrapper1')(API_KEY_HERE);
 
 qpx.api("1", "EUR5000", "1", "DUB", "GDN", "2016-12-14", function(data){
-  //data looks like: [ { airline: 'SK', price: 'EUR71.10', name: 'Name of airline' } ]
+	//data looks like: [ { Destination: , Origin: , airline: 'Name of airline', arrivalTime: 'Arrival Time', departureTime: 'Departure Time', flightNumber: 'Flight Number', price: 'EUR71.10' } ]
+	//for connecting flights it is an array of two flight object.
 });
 ```
 
